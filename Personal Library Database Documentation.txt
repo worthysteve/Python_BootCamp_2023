@@ -1,0 +1,97 @@
+Table Design:
+
+CREATE TABLE Books (
+	BookID INTEGER, 
+	Title VARCHAR(128),
+	Author VARCHAR(128),
+	YearPublished INTEGER,
+	Genre VARCHAR(128), 
+	PRIMARY KEY(BookID)
+	)
+	
+
+
+Data Insertion:
+
+INSERT INTO Books (BookID, Title, Author, YearPublished, Genre) 
+	VALUES (
+	1100, 
+	'Rich Dad Poor Dad', 
+	'Robert T. Kiyoski', 
+	2002, 
+	'Business'
+	)
+
+
+INSERT INTO Books (BookID, Title, Author, YearPublished, Genre) 
+	VALUES (
+	1101, 
+	'Utopia', 
+	'Thomas More', 
+	2021, 
+	'Satire'
+	)
+
+INSERT INTO Books (BookID, Title, Author, YearPublished, Genre) 
+	VALUES (
+	1102, 
+	'Things Fall Apart', 
+	'Chinua Achebe', 
+	2004, 
+	'Drama'
+	)
+
+INSERT INTO Books (BookID, Title, Author, YearPublished, Genre) 
+	VALUES (
+	1103, 
+	'Lord Of The Flies', 
+	'William Golding', 
+	2006, 
+	'Fiction'
+	)
+
+INSERT INTO Books (BookID, Title, Author, YearPublished, Genre) 
+	VALUES (
+	1104, 
+	'Radical Inclusion: Seven Steps to Help You Create a More Just Workplace, Home, and World', 
+	'David Moinina Sengeh ', 
+	2023, 
+	'Self-Help'
+	)
+
+INSERT INTO Books (BookID, Title, Author, YearPublished, Genre) 
+	VALUES (
+	1105, 
+	'The Lean Startup', 
+	'Eric Ries', 
+	2014, 
+	'Entrepreneurship'
+	)
+
+
+query to list all books in the database
+
+SELECT *
+FROM Books
+
+
+query to find all books published after the year 2010.
+SELECT *
+FROM Books
+WHERE YearPublished >= 2010
+
+
+query to find all books in the "Fiction" genre.
+SELECT *
+FROM Books
+WHERE Genre = 'Fiction'
+
+
+Data Manipulation
+
+UPDATE Books
+SET YearPublished = 2023
+WHERE Title = 'The Lean Startup'
+
+
+DELETE FROM Books WHERE BookID = 1106
